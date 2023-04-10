@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+void Sapxep(int a[], int n)
+{
+    for(int i = 0; i<n-1; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+            if(a[min]>a[j])
+                min = j;
+            swap(a[i], a[min]);
+    }
+}
+
+void swap(int &a, int &b)
+{
+    int x = a;
+    a = b;
+    b = x;
+}
+
+void NhapMang(int a[], int &n)
+{
+    do
+    {
+        printf("Cho biet so phan tu cua mang: ")
+    } while (n<=0);
+    for(int i=0; i<n; i++)
+    {
+        printf("Gia tri phan tu a[%d]=",i);
+        scanf("%d, &a[i]");
+    }
+    
+}
+
+void main()
+{
+    int A[100];
+    NhapMang(A, N);
+    Sapxep(A, N);
+    printf("Mang sau khi sap xep la: ");
+    XuatMang(A, N);
+    getch();
+}
